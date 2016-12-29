@@ -17,45 +17,72 @@
     <script src="lib/bootstrap-slider-9.2.0/bootstrap-slider.min.js"></script>
 
 
-    <!-- CUSTOM SCRIPTS --
-    <!-- CONTROLLERS -->
-    <script src="js/Controller/MainController.js"></script>
-
     <!-- CUSTOM STYLESHEETS -->
     <link rel="stylesheet" href="css/mainStyle.css"/>
 
 </head>
-<body>
+<body onload="hideUnhidePage(0)">
 
 <!-- NAVIGATION BAR -->
-<nav class="navbar navbar-fixed-top">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Impro</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">File
-                    <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">New...</a></li>
-                    <li><a href="#">Open</a></li>
-                    <li><a href="#">Save</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Edit</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile </a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-wrench"></span> Settings </a></li>
+            <li><a href="#Warning" onmouseenter="hideUnhidePage(1)" onmouseleave="hideUnhidePage(0)">Avertissement</a></li>
+            <li><a href="#Hymne" onmouseenter="hideUnhidePage(3)" onmouseleave="hideUnhidePage(0)">Hymne</a></li>
+            <li><a href="#Caucus" onmouseenter="hideUnhidePage(5)" onmouseleave="hideUnhidePage(0)">Caucus</a></li>
+            <li><a href="#Entracte" onmouseenter="hideUnhidePage(7)" onmouseleave="hideUnhidePage(0)">Entracte</a></li>
+            <li><a href="#Vote" onmouseenter="hideUnhidePage(9)" onmouseleave="hideUnhidePage(0)">Vote</a></li>
+            <li><a href="#Penalty" onmouseenter="hideUnhidePage(11)" onmouseleave="hideUnhidePage(0)">Pénalité</a></li>
+            <li><a href="#Expulsion" onmouseenter="hideUnhidePage(13)" onmouseleave="hideUnhidePage(0)">Expulsion</a></li>
+            <li><a href="#Shootout" onmouseenter="hideUnhidePage(15)" onmouseleave="hideUnhidePage(0)">Fusillade</a></li>
+            <li><a href="#Stars" onmouseenter="hideUnhidePage(17)" onmouseleave="hideUnhidePage(0)">étoiles</a></li>
+            <!-- dropdown template -->
+            <!--<li class="dropdown">-->
+            <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">File-->
+            <!--<span class="caret"></span></a>-->
+            <!--<ul class="dropdown-menu">-->
+            <!--<li><a href="#">New...</a></li>-->
+            <!--<li><a href="#">Open</a></li>-->
+            <!--<li><a href="#">Save</a></li>-->
+            <!--</ul>-->
+            <!--</li>-->
         </ul>
     </div>
 </nav>
-
-<div class="container-fluid">
-    
+<div id="Pages">
+    <div id="Warning" class="alert-danger" >
+        Warning
+    </div>
+    <div id="Hymne" class="alert-danger" >
+        Hymne
+    </div>
+    <div id="Caucus" class="alert-danger">
+        Caucus
+    </div>
+    <div id="Entracte" class="alert-danger">
+        Entracte
+    </div>
+    <div id="Vote" class="alert-danger">
+        Vote
+    </div>
+    <div id="Penalty" class="alert-danger">
+        Penalty
+    </div>
+    <div id="Expulsion" class="alert-danger">
+        Expulsion
+    </div>
+    <div id="Shootout" class="alert-danger">
+        Shootout
+    </div>
+    <div id="Stars" class="alert-danger">
+        Stars
+    </div>
 </div>
-
+<!-- CUSTOM SCRIPTS -->
+<!-- CONTROLLERS -->
+<script src="js/Controller/MainController.js"></script>
 </body>
 </html>
