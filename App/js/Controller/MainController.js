@@ -1,7 +1,13 @@
 
-var today;
-var pages = document.getElementById('Pages').childNodes;
-
+var pages = document.getElementById('Pages');
+var nodes = [];
+for(var i = 0; i < pages.children.length; i++){
+    nodes.push(pages.children.item(i));
+}
+while(pages.children.length > 0){
+    pages.removeChild(pages.children.item(0));
+}
+pages.appendChild(nodes[0]);
 // $(function () {
 // 	today = m_getToday();
 // 	m_initEventListeners();
@@ -25,12 +31,8 @@ var pages = document.getElementById('Pages').childNodes;
 // }
 
 function hideUnhidePage(page){
-    for(var i = 1; i < pages.length; i+=2){
-        if (pages.item(i) == pages.item(page)){
-            pages.item(i).style.visibility = 'visible';
-        }
-        else{
-            pages.item(i).style.visibility = 'hidden';
-        }
+    for(var i = 0; i < pages.children.length; i++){
+        pages.removeChild(pages.children.item(i));
     }
+    pages.appendChild(nodes[page]);
 }
