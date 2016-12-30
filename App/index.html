@@ -53,22 +53,204 @@
     </div>
 </nav>
 <div class="jumbotron" id="Pages">
-    <div id="Home">Home</div>
-    <div id="Warning">Warning</div>
-    <div id="Hymne">Hymne</div>
-    <div id="Caucus">Caucus</div>
-    <div id="Entracte">Entracte</div>
-    <div id="Vote">Vote</div>
-    <div id="Penalty">Penalty</div>
-    <div id="Expulsion">Expulsion</div>
-    <div id="Shootout">Shootout</div>
-    <div id="Stars">Stars</div>
+    <div id="Home" class="container">
+        <div class="row" id="homeQuickTimers">
+            <div class="col-md-2 col-md-offset-5" id="homeQuickTimerStarter">
+                <img class="img-responsive center-block pointy-cursor" 
+                     onclick="showQuickTimerSelector()"
+                     src="assets/middlethingy.png">
+            </div>
+            <div class="col-md-12" id="homeQuickTimerSelector">
+                <div class="row">
+                    <div class="col-md-1 col-md-offset-3 vcenter pointy-cursor"
+                         onclick="startTimer(0)"
+                         onmouseover="this.getElementsByTagName('img')[0].src='assets/timer_seconds_00_hover.png';"
+                         onmouseout="this.getElementsByTagName('img')[0].src='assets/timer_seconds_00.png';">
+                        <img class="img-responsive center-block"
+                             src="assets/timer_seconds_00.png">
+                    </div><!--
+                 -->
+                    <div class="col-md-1 vcenter pointy-cursor"
+                         onclick="startTimer(15)"
+                         onmouseover="this.getElementsByTagName('img')[0].src='assets/timer_seconds_15_hover.png';"
+                         onmouseout="this.getElementsByTagName('img')[0].src='assets/timer_seconds_15.png';">
+                        <img class="img-responsive center-block"
+                             src="assets/timer_seconds_15.png">
+                    </div><!--
+<<<<<<< HEAD
+                 --><div class="col-md-2 vcenter">
+                        <img class="img-responsive center-block pointy-cursor timer-minute"
+                             id="minutes-top"
+                             onclick="incrementMinutes()"
+                             src="assets/timer_0_top.png">
+                        <img class="img-responsive center-block pointy-cursor timer-minute"
+                             id="minutes-bottom"
+                             onclick="decrementMinutes()"
+                             src="assets/timer_0_bottom.png">
+                    </div><!--
+                 -->
+                    <div class="col-md-1 vcenter pointy-cursor"
+                         onclick="startTimer(30)"
+                         onmouseover="this.getElementsByTagName('img')[0].src='assets/timer_seconds_30_hover.png';"
+                         onmouseout="this.getElementsByTagName('img')[0].src='assets/timer_seconds_30.png';">
+                        <img class="img-responsive center-block"
+                             src="assets/timer_seconds_30.png">
+                    </div><!--
+                 -->
+                    <div class="col-md-1 vcenter pointy-cursor"
+                         onclick="startTimer(45)"
+                         onmouseover="this.getElementsByTagName('img')[0].src='assets/timer_seconds_45_hover.png';"
+                         onmouseout="this.getElementsByTagName('img')[0].src='assets/timer_seconds_45.png';">
+                        <img class="img-responsive center-block"
+                             src="assets/timer_seconds_45.png">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="homeQuickTimerButtons">
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-3">
+                        <h1 id="quick-timer" class="fat-text">00:00</h1>
+                    </div>
+                    <div class="col-md-1" onclick="timerButtonPlay('quick')">
+                        <span class="glyphicon glyphicon-play glyphicon-timer pointy-cursor"></span>
+                    </div>
+                    <div class="col-md-1" onclick="timerButtonPause('quick')">
+                        <span class="glyphicon glyphicon-pause glyphicon-timer pointy-cursor"></span>
+                    </div>
+                    <div class="col-md-1" onclick="timerButtonStop('quick')">
+                        <span class="glyphicon glyphicon-stop glyphicon-timer pointy-cursor"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="homeTitle">
+            <div class="col-md-4 flex-container" style="flex-direction: column; justify-content: space-around;" id="homeTitleCheckboxT1">
+                <div class="row">
+                    <input class="center-block team-text" type="text" placeholder="Equipe 1">
+                </div>
+                <div class="row flex-container" style="flex-direction: column; justify-content: space-around; align-items: center;">
+                    <div><img class="pointy-cursor" src="assets/emptysadthingy.png" style="margin-top: 6px;" id="check1T1" onclick="checkUncheck(this.id)"></div>
+                    <div><img class="pointy-cursor" src="assets/emptysadthingy.png" style="margin-top: 6px;" id="check2T1" onclick="checkUncheck(this.id)"></div>
+                    <div><img class="pointy-cursor" src="assets/emptysadthingy.png" style="margin-top: 6px;" id="check3T1" onclick="checkUncheck(this.id)"></div>
+                </div>
+            </div>
+            <div class="col-md-4" id="homeTitleEdit">
+                <textarea class="form-control span6 title-text" style="resize: none;" rows="3"
+                          placeholder="Titre de l'improvisation"></textarea>
+            </div>
+            <div class="col-md-4 flex-container" style="flex-direction: column; justify-content: space-around;" id="homeTitleCheckboxT2">
+                <div class="row">
+                    <input class="center-block team-text" type="text" placeholder="Equipe 2">
+                </div>
+                <div class="row flex-container" style="flex-direction: column; justify-content: space-around; align-items: center;">
+                    <div><img class="pointy-cursor" src="assets/emptysadthingy.png" style="margin-top: 6px;" id="check1T2" onclick="checkUncheck(this.id)"></div>
+                    <div><img class="pointy-cursor" src="assets/emptysadthingy.png" style="margin-top: 6px;" id="check2T2" onclick="checkUncheck(this.id)"></div>
+                    <div><img class="pointy-cursor" src="assets/emptysadthingy.png" style="margin-top: 6px;" id="check3T2" onclick="checkUncheck(this.id)"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row flex-container" id="homeScoring" style="flex-direction: row; justify-content: space-around;">
+            <div class="col-md-4" id="homeScoringCounterT1">
+                <div class="row">
+                    <h2><span id="scoreT1" class="label col-md-12 score-text" style="background-color: #0f0f0f;">0</span></h2>
+                    <div class="col-md-4">
+                        <div class="btn-block flex-container"
+                             style="flex-direction: row; justify-content: space-around; align-items: center">
+                            <span class="glyphicon glyphicon-triangle-bottom glyphicon-timer-period pointy-cursor"
+                                  aria-hidden="true" onclick="updateScore(false,1)"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="btn-block flex-container"
+                             style="flex-direction: row; justify-content: space-around; align-items: center">
+                            <span class="glyphicon glyphicon-stop glyphicon-timer-period pointy-cursor"
+                                  aria-hidden="true" onclick="changeTeamColor('scoreT1')"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="btn-block flex-container"
+                             style="flex-direction: row; justify-content: space-around; align-items: center">
+                            <span class="glyphicon glyphicon-triangle-top glyphicon-timer-period pointy-cursor"
+                                  aria-hidden="true" onclick="updateScore(true,1)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" id="homeScoringEdit">
+                <div class="row">
+                    <div class="col-md-6 flex-container" style="flex-direction: row;">
+                        <h2><span class="label label-primary">Période</span></h2>
+                        <h2><span id="period" class="label label-info">1</span></h2>
+                    </div>
+                    <div class="col-md-6 flex-container"
+                         style="align-items: center; justify-content: center; flex-direction: column;">
+                        <div onclick="updatePeriod(true)">
+                            <span class="glyphicon glyphicon-triangle-top glyphicon-timer-period pointy-cursor"
+                                  aria-hidden="true"></span>
+                        </div>
+                        <div onclick="updatePeriod(false)">
+                            <span class="glyphicon glyphicon-triangle-bottom glyphicon-timer-period pointy-cursor"
+                                  aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row flex-container" id="homeScoringTimers" style="flex-direction: row;">
+                    <div class="col-md-6">
+                        <h1 id="period-timer" class="img-text-period">50:00</h1>
+                    </div>
+                    <div class="col-md-6 flex-container" style="justify-content: center;align-items: center;">
+                        <div class="col-md-4" onclick="timerButtonPlay('period')">
+                            <span class="glyphicon glyphicon-play glyphicon-timer-period"></span>
+                        </div>
+                        <div class="col-md-4" onclick="timerButtonPause('period')">
+                            <span class="glyphicon glyphicon-pause glyphicon-timer-period"></span>
+                        </div>
+                        <div class="col-md-4" onclick="timerButtonStop('period')">
+                            <span class="glyphicon glyphicon-stop glyphicon-timer-period"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" id="homeScoringCounterT2">
+                <div class="row">
+                    <h2><span id="scoreT2" class="label col-md-12 score-text" style="background-color: #0f0f0f;">0</span></h2>
+                    <div class="col-md-4">
+                        <div class="btn-block flex-container"
+                             style="flex-direction: row; justify-content: space-around; align-items: center">
+                            <span class="glyphicon glyphicon-triangle-bottom glyphicon-timer-period pointy-cursor"
+                                  aria-hidden="true" onclick="updateScore(false,2)"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="btn-block flex-container"
+                             style="flex-direction: row; justify-content: space-around; align-items: center">
+                            <span class="glyphicon glyphicon-stop glyphicon-timer-period pointy-cursor"
+                                  aria-hidden="true" onclick="changeTeamColor('scoreT2')"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="btn-block flex-container"
+                             style="flex-direction: row; justify-content: space-around; align-items: center">
+                            <span class="glyphicon glyphicon-triangle-top glyphicon-timer-period pointy-cursor"
+                                  aria-hidden="true" onclick="updateScore(true,2)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Warning" class="container">Warning</div>
+    <div id="Hymne" class="container">Hymne</div>
+    <div id="Caucus" class="container">Caucus</div>
+    <div id="Entracte" class="container">Entracte</div>
+    <div id="Vote" class="container">Vote</div>
+    <div id="Penalty" class="container">Penalty</div>
+    <div id="Expulsion" class="container">Expulsion</div>
+    <div id="Shootout" class="container">Shootout</div>
+    <div id="Stars" class="container">Stars</div>
 </div>
 <!-- CUSTOM SCRIPTS -->
 <!-- CONTROLLERS -->
 <script src="js/Controller/MainController.js"></script>
-<!--<script>-->
-    <!--hideUnhidePage(0);-->
-<!--</script>-->
 </body>
 </html>

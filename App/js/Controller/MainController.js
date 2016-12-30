@@ -1,38 +1,313 @@
-
+var scoreT1Span = document.getElementById('scoreT1');
+var scoreT2Span = document.getElementById('scoreT2');
 var pages = document.getElementById('Pages');
-var nodes = [];
-for(var i = 0; i < pages.children.length; i++){
-    nodes.push(pages.children.item(i));
-}
-while(pages.children.length > 0){
-    pages.removeChild(pages.children.item(0));
-}
+var quickTimers = document.getElementById('homeQuickTimers');
+var periodSpan = document.getElementById('period');
+var scoreT1 = 0;
+var scoreT2 = 0;
+var periods = ['1','2','3','4','première','dernière'];
+var teamColors = ['#000066','#0000ff','#0099ff','#00ffff','#003300','#00cc00','#ffcc00','#ff6600','#cc6600','#ff0000','#ff66ff',
+    '#993399','#660066','#7c7c7c','#000000'];
+var colorIncrement = 0;
+var period = 0;
+var nodes = [].slice.call(pages.children);
+var timerNodes = [].slice.call(quickTimers.children);
+pages.innerHTML = "";
+quickTimers.innerHTML = "";
 pages.appendChild(nodes[0]);
-// $(function () {
-// 	today = m_getToday();
-// 	m_initEventListeners();
-// });
+quickTimers.appendChild(timerNodes[0]);
 
-// function m_initEventListeners() {
-//
-// }
-
-// function m_getToday() {
-//     var today = new Date();
-//     var day = days[today.getDay()];
-//     var dd = today.getDate();
-//     var mm = today.getMonth() + 1; //January is 0!
-//     var yyyy = today.getFullYear();
-//
-//     if (dd < 10) dd = '0' + dd;
-//     if (mm < 10) mm = '0' + mm;
-//
-//     return day + ', ' + mm + '.' + dd + '.' + yyyy;
-// }
-
-function hideUnhidePage(page){
-    for(var i = 0; i < pages.children.length; i++){
-        pages.removeChild(pages.children.item(i));
-    }
+function hideUnhidePage(page)
+{
+    pages.innerHTML = "";
     pages.appendChild(nodes[page]);
+}
+
+function showQuickTimerStarter()
+{
+    quickTimers.innerHTML = "";
+    quickTimers.appendChild(timerNodes[0]);
+}
+
+function showQuickTimerSelector()
+{
+    quickTimers.innerHTML = "";
+    quickTimers.appendChild(timerNodes[1]);
+}
+
+function showQuickTimerButtons()
+{
+    quickTimers.innerHTML = "";
+    quickTimers.appendChild(timerNodes[2]);
+}
+
+function updateScore(increment, team){
+    if(increment){
+        if(team == 1){
+            scoreT1++;
+            scoreT1Span.innerHTML = scoreT1;
+        }
+        else{
+            scoreT2++;
+            scoreT2Span.innerHTML = scoreT2;
+        }
+    }
+    else {
+        if(team == 1){
+            scoreT1--;
+            if(scoreT1 <0){scoreT1 = 0}
+            scoreT1Span.innerHTML = scoreT1;
+        }
+        else{
+            scoreT2--;
+            if(scoreT2 <0){scoreT2 = 0}
+            scoreT2Span.innerHTML = scoreT2;
+        }
+    }
+}
+
+function updatePeriod(increment){
+    if(increment){
+        period++;
+    }
+    else{
+        period = (period + 5) % 6;
+    }
+    periodSpan.innerHTML = periods[period%periods.length];
+}
+
+function checkUncheck(callerId) {
+    if (document.getElementById(callerId).getAttribute('src') == 'assets/emptysadthingy.png') {
+        document.getElementById(callerId).setAttribute('src', 'assets/sadthingy.png');
+    }
+    else {
+        document.getElementById(callerId).setAttribute('src', 'assets/emptysadthingy.png');
+    }
+}
+
+function changeTeamColor(team)
+{
+    colorIncrement++;
+    if(team == scoreT1Span.id){
+        scoreT1Span.style.backgroundColor = teamColors[colorIncrement%teamColors.length];
+    }
+    else{
+        scoreT2Span.style.backgroundColor = teamColors[colorIncrement%teamColors.length];
+    }
+}
+
+var minutes = 0;
+var timer = 0;
+var timer_running = false;
+var spike = null;
+
+function incrementMinutes()
+{
+    minutes = (minutes + 1) % 16;
+    updateMinutes();
+}
+
+function decrementMinutes()
+{
+    minutes = (minutes + 15) % 16;
+    updateMinutes();
+}
+
+function updateMinutes()
+{
+    var top = document.getElementById("minutes-top");
+    var bottom = document.getElementById("minutes-bottom");
+    top.src = "assets/timer_" + minutes + "_top.png";
+    bottom.src = "assets/timer_" + minutes + "_bottom.png";
+}
+
+function startTimer(seconds)
+{
+    timer = 60 * minutes + seconds;
+    if(timer > 900 | timer < 1)
+    {
+        minutes = 0;
+        timer = 0;
+        updateMinutes();
+        showQuickTimerStarter();
+    }
+    else
+    {
+        showQuickTimerButtons();
+        updateTimer();
+    }
+}
+
+function updateTimer()
+{
+    var timer_text = document.getElementById('quick-timer');
+    var m = Math.floor(timer / 60);
+    if(m < 10)
+        m = '0' + m;
+    var s = timer % 60;
+    if(s < 10)
+        s = '0' + s;
+    timer_text.innerHTML = m + ":" + s;
+}
+
+function runTimer()
+{
+    if (timer_running)
+    {
+        if(timer > 1)
+        {
+            timer--;
+            updateTimer();
+            spike = new SpikeTimer(runTimer, 1000);
+        }
+        else
+        {
+            timer = 0;
+            updateTimer();
+            timer_running = false;
+        }
+    }
+}
+
+function SpikeTimer(callback, delay) {
+    var timerId, start, remaining = delay;
+
+    this.pause = function() {
+        window.clearTimeout(timerId);
+        remaining -= new Date() - start;
+    };
+
+    this.resume = function() {
+        start = new Date();
+        window.clearTimeout(timerId);
+        timerId = window.setTimeout(callback, remaining);
+    };
+
+    this.resume();
+}
+
+// this is hideous, but i'm lazy
+
+var period_minutes = 0;
+var period_timer = 50 * 60;
+var period_timer_running = false;
+var period_spike = null;
+
+// function period_startTimer(seconds)
+// {
+    // period_timer = 60 * period_minutes + seconds;
+    // if(timer > 900 | timer < 1)
+    // {
+        // minutes = 0;
+        // timer = 0;
+        // updateMinutes();
+    // }
+    // else
+    // {
+        // period_updateTimer();
+    // }
+// }
+
+function period_updateTimer()
+{
+    var timer_text = document.getElementById('period-timer');
+    var m = Math.floor(period_timer / 60);
+    if(m < 10)
+        m = '0' + m;
+    var s = period_timer % 60;
+    if(s < 10)
+        s = '0' + s;
+    timer_text.innerHTML = m + ":" + s;
+}
+
+function period_runTimer()
+{
+    if (period_timer_running)
+    {
+        if(period_timer > 1)
+        {
+            period_timer--;
+            period_updateTimer();
+            period_spike = new SpikeTimer(period_runTimer, 1000);
+        }
+        else
+        {
+            period_timer = 0;
+            period_updateTimer();
+            period_timer_running = false;
+        }
+    }
+}
+
+function timerButtonPlay(timer_id)
+{
+    if(timer_id == 'period')
+    {
+        if(!period_timer_running)
+        {
+            period_timer_running = true;
+            period_spike = new SpikeTimer(period_runTimer, 1000);
+        }
+        else
+        {
+            period_spike.resume();
+        }
+    }
+    else
+    {
+        if(!timer_running)
+        {
+            timer_running = true;
+            spike = new SpikeTimer(runTimer, 1000);
+        }
+        else
+        {
+            spike.resume();
+        }
+    }
+}
+
+function timerButtonPause(timer_id)
+{
+    if(timer_id == 'period')
+    {
+        if(period_timer_running)
+        {
+            period_spike.pause();
+            period_timer_running = false;
+        }
+    }
+    else
+    {
+        if(timer_running)
+        {
+            spike.pause();
+            timer_running = false;
+        }
+    }
+}
+
+function timerButtonStop(timer_id)
+{
+    if(timer_id == 'period')
+    {
+        if(period_timer_running)
+        {
+            period_spike.pause();
+        }
+        period_timer_running = false;
+        period_timer = 50 * 60;
+        period_updateTimer();
+    }
+    else
+    {
+        if(timer_running)
+        {
+            spike.pause();
+        }
+        timer_running = false;
+        timer = 0;
+        updateTimer();
+        showQuickTimerStarter();
+    }
 }
