@@ -60,6 +60,9 @@
 .jumbotron
 {
     background-color: #fff;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
 }
 
 .score-text
@@ -85,4 +88,12 @@
 {
     display: -webkit-flex;
     display: flex;
+}
+
+.blinking {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
 }

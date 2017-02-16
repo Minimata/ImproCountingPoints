@@ -21,6 +21,9 @@ function hideUnhidePage(page)
 {
     pages.innerHTML = "";
     pages.appendChild(nodes[page]);
+    var s = nodes[page].children[0].children[0].src;
+    nodes[page].children[0].children[0].src = "";
+    nodes[page].children[0].children[0].src = s + "?a=" + Math.random();
 }
 
 function showQuickTimerStarter()
@@ -138,7 +141,7 @@ function startTimer(seconds)
     }
 }
 
-function updateTimer()
+function updateTimer(blinking)
 {
     var timer_text = document.getElementById('quick-timer');
     var m = Math.floor(timer / 60);
@@ -148,6 +151,14 @@ function updateTimer()
     if(s < 10)
         s = '0' + s;
     timer_text.innerHTML = m + ":" + s;
+    if(blinking){
+        timer_text.style.color = '#FF0000';
+        timer_text.setAttribute('class','fat-text blinking');
+    }
+    else{
+        timer_text.style.color = '#333333';
+        timer_text.setAttribute('class','fat-text');
+    }
 }
 
 function runTimer()
@@ -157,13 +168,13 @@ function runTimer()
         if(timer > 1)
         {
             timer--;
-            updateTimer();
+            updateTimer(false);
             spike = new SpikeTimer(runTimer, 1000);
         }
         else
         {
             timer = 0;
-            updateTimer();
+            updateTimer(true);
             timer_running = false;
         }
     }
@@ -187,26 +198,9 @@ function SpikeTimer(callback, delay) {
 }
 
 // this is hideous, but i'm lazy
-
-var period_minutes = 0;
 var period_timer = 50 * 60;
 var period_timer_running = false;
 var period_spike = null;
-
-// function period_startTimer(seconds)
-// {
-    // period_timer = 60 * period_minutes + seconds;
-    // if(timer > 900 | timer < 1)
-    // {
-        // minutes = 0;
-        // timer = 0;
-        // updateMinutes();
-    // }
-    // else
-    // {
-        // period_updateTimer();
-    // }
-// }
 
 function period_updateTimer()
 {
@@ -237,6 +231,35 @@ function period_runTimer()
             period_timer_running = false;
         }
     }
+}
+
+function period_incrementMinutes()
+{
+    timerButtonStop('period');
+    if(period_timer >= 50 * 60)
+    {
+        period_timer = 0;
+    }
+    else
+    {
+        period_timer = Math.ceil((period_timer + 1) / 300) * 300;
+
+    }
+    period_updateTimer();
+}
+
+function period_decrementMinutes()
+{
+    timerButtonStop('period');
+    if(period_timer < 300)
+    {
+        period_timer = 50 * 60;
+    }
+    else
+    {
+        period_timer = Math.floor((period_timer - 1) / 300) * 300;
+    }
+    period_updateTimer();
 }
 
 function timerButtonPlay(timer_id)
@@ -296,7 +319,7 @@ function timerButtonStop(timer_id)
             period_spike.pause();
         }
         period_timer_running = false;
-        period_timer = 50 * 60;
+        // period_timer = 50 * 60;
         period_updateTimer();
     }
     else
