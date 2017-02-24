@@ -6,19 +6,19 @@
 
     <!-- WARNING ! Script include order is important, treat it with care. -->
     <!-- JQUERY -->
-    <script src="lib/jquery-3.1.0.min.js"></script>
+    <script src="Data/lib/jquery-3.1.0.min.js"></script>
 
     <!-- BOOTSTRAP -->
-    <link rel="stylesheet" href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <script src="lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Data/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="Data/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 
     <!-- BOOTSTRAP SLIDER -->
-    <link rel="stylesheet" href="lib/bootstrap-slider-9.2.0/css/bootstrap-slider.min.css">
-    <script src="lib/bootstrap-slider-9.2.0/bootstrap-slider.min.js"></script>
+    <link rel="stylesheet" href="Data/lib/bootstrap-slider-9.2.0/css/bootstrap-slider.min.css">
+    <script src="Data/lib/bootstrap-slider-9.2.0/bootstrap-slider.min.js"></script>
 
 
     <!-- CUSTOM STYLESHEETS -->
-    <link rel="stylesheet" href="css/mainStyle.css"/>
+    <link rel="stylesheet" href="Data/css/mainStyle.css"/>
 
 </head>
 <body>
@@ -27,18 +27,45 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Impro</a>
+            <a class="navbar-brand" href="#" onclick="hideUnhidePage(0)">Home</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="#" onmouseover="hideUnhidePage(1)" onmouseleave="hideUnhidePage(0)">Avertissement</a></li>
-            <li><a href="#" onmouseover="hideUnhidePage(2)" onmouseleave="hideUnhidePage(0)">Hymne</a></li>
-            <li><a href="#" onmouseover="hideUnhidePage(3)" onmouseleave="hideUnhidePage(0)">Caucus</a></li>
-            <li><a href="#" onmouseover="hideUnhidePage(4)" onmouseleave="hideUnhidePage(0)">Entracte</a></li>
-            <li><a href="#" onmouseover="hideUnhidePage(5)" onmouseleave="hideUnhidePage(0)">Vote</a></li>
-            <li><a href="#" onmouseover="hideUnhidePage(6)" onmouseleave="hideUnhidePage(0)">Pénalité</a></li>
-            <li><a href="#" onmouseover="hideUnhidePage(7)" onmouseleave="hideUnhidePage(0)">Expulsion</a></li>
-            <li><a href="#" onmouseover="hideUnhidePage(8)" onmouseleave="hideUnhidePage(0)">Fusillade</a></li>
-            <li><a href="#" onmouseover="hideUnhidePage(9)" onmouseleave="hideUnhidePage(0)">étoiles</a></li>
+            <li><a href="#" onclick="hideUnhidePage(1)" onmouseenter="mouseovertitle(1)"
+                   onmouseleave="mouseovertitle(1)">
+                <div class="navbar-link" hidden id="titletext1">Avertissement</div>
+                <img class="navbar-link" id="titleimg1" src="Data/assets/avertissement.png"></a></li>
+            <li><a href="#" onclick="hideUnhidePage(2)" onmouseenter="mouseovertitle(2)"
+                   onmouseleave="mouseovertitle(2)">
+                <div class="navbar-link" hidden id="titletext2">Hymne</div>
+                <img class="navbar-link" id="titleimg2" src="Data/assets/hymne.png"></a></li>
+            <li><a href="#" onclick="hideUnhidePage(3)" onmouseenter="mouseovertitle(3)"
+                   onmouseleave="mouseovertitle(3)">
+                <div class="navbar-link" hidden id="titletext3">Caucus</div>
+                <img class="navbar-link" id="titleimg3" src="Data/assets/caucus.png"></a></li>
+            <li><a href="#" onclick="hideUnhidePage(4)" onmouseenter="mouseovertitle(4)"
+                   onmouseleave="mouseovertitle(4)">
+                <div class="navbar-link" hidden id="titletext4">Entracte</div>
+                <img class="navbar-link" id="titleimg4" src="Data/assets/entracte.png"></a></li>
+            <li><a href="#" onclick="hideUnhidePage(5)" onmouseenter="mouseovertitle(5)"
+                   onmouseleave="mouseovertitle(5)">
+                <div class="navbar-link" hidden id="titletext5">Vote</div>
+                <img class="navbar-link" id="titleimg5" src="Data/assets/vote.png"></a></li>
+            <li><a href="#" onclick="hideUnhidePage(6)" onmouseenter="mouseovertitle(6)"
+                   onmouseleave="mouseovertitle(6)">
+                <div class="navbar-link" hidden id="titletext6">Pénalité</div>
+                <img class="navbar-link" id="titleimg6" src="Data/assets/penalite.png"></a></li>
+            <li><a href="#" onclick="hideUnhidePage(7)" onmouseenter="mouseovertitle(7)"
+                   onmouseleave="mouseovertitle(7)">
+                <div class="navbar-link" hidden id="titletext7">Expulsion</div>
+                <img class="navbar-link" id="titleimg7" src="Data/assets/expulsion.png"></a></li>
+            <li><a href="#" onclick="hideUnhidePage(8)" onmouseenter="mouseovertitle(8)"
+                   onmouseleave="mouseovertitle(8)">
+                <div class="navbar-link" hidden id="titletext8">Fusillade</div>
+                <img class="navbar-link" id="titleimg8" src="Data/assets/fusillade.png"></a></li>
+            <li><a href="#" onclick="hideUnhidePage(9)" onmouseenter="mouseovertitle(9)"
+                   onmouseleave="mouseovertitle(9)">
+                <div class="navbar-link" hidden id="titletext9">Étoiles</div>
+                <img class="navbar-link" id="titleimg9" src="Data/assets/etoiles.png"></a></li>
             <!-- dropdown template -->
             <!--<li class="dropdown">-->
             <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">File-->
@@ -52,57 +79,99 @@
         </ul>
     </div>
 </nav>
+<!--TITLE------------------------------------------------------------------------------------------------------>
+<div class="col-md-10 col-md-offset-1" id="homeTitleEdit">
+                <textarea class="form-control span6 title-text" style="resize: none; border: none; text-align: center;" rows="2"
+                          placeholder="Titre de l'improvisation"></textarea>
+</div>
 <div class="jumbotron" id="Pages">
     <div id="Home" class="container">
+        <div class="row" id="homeTitle">
+            <div class="col-md-6 flex-container" style="flex-direction: column; justify-content: space-around;"
+                 id="homeTitleCheckboxT1">
+                <div class="row">
+                    <input class="center-block team-text" type="text" placeholder="Equipe 1" style="border: none; text-align: center;">
+                </div>
+                <div class="row flex-container"
+                     style="flex-direction: column; justify-content: space-around; align-items: center;">
+                    <div><img class="pointy-cursor" src="Data/assets/emptysadthingy.png" style="margin-top: 6px;"
+                              id="check1T1" onclick="checkUncheck(this.id)"></div>
+                    <div><img class="pointy-cursor" src="Data/assets/emptysadthingy.png" style="margin-top: 6px;"
+                              id="check2T1" onclick="checkUncheck(this.id)"></div>
+                    <div><img class="pointy-cursor" src="Data/assets/emptysadthingy.png" style="margin-top: 6px;"
+                              id="check3T1" onclick="checkUncheck(this.id)"></div>
+                </div>
+            </div>
+            <div class="col-md-6 flex-container" style="flex-direction: column; justify-content: space-around;"
+                 id="homeTitleCheckboxT2">
+                <div class="row">
+                    <input class="center-block team-text" type="text" placeholder="Equipe 2" style="border: none; text-align: center;">
+                </div>
+                <div class="row flex-container"
+                     style="flex-direction: column; justify-content: space-around; align-items: center;">
+                    <div><img class="pointy-cursor" src="Data/assets/emptysadthingy.png" style="margin-top: 6px;"
+                              id="check1T2" onclick="checkUncheck(this.id)"></div>
+                    <div><img class="pointy-cursor" src="Data/assets/emptysadthingy.png" style="margin-top: 6px;"
+                              id="check2T2" onclick="checkUncheck(this.id)"></div>
+                    <div><img class="pointy-cursor" src="Data/assets/emptysadthingy.png" style="margin-top: 6px;"
+                              id="check3T2" onclick="checkUncheck(this.id)"></div>
+                </div>
+            </div>
+        </div>
+        <!--TIMERS----------------------------------------------------------------------------------------------------->
         <div class="row" id="homeQuickTimers">
             <div class="col-md-2 col-md-offset-5" id="homeQuickTimerStarter">
                 <img class="img-responsive center-block pointy-cursor"
                      onclick="showQuickTimerSelector()"
-                     src="assets/middlethingy.png">
+                     src="Data/assets/middlethingy.png">
             </div>
             <div class="col-md-12" id="homeQuickTimerSelector">
                 <div class="row">
                     <div class="col-md-1 col-md-offset-3 vcenter pointy-cursor"
-                         onclick="this.getElementsByTagName('img')[0].src='assets/timer_seconds_00.png';startTimer(0)" unselectable="on"
-                         onmouseover="this.getElementsByTagName('img')[0].src='assets/timer_seconds_00_hover.png';"
-                         onmouseout="this.getElementsByTagName('img')[0].src='assets/timer_seconds_00.png';">
+                         onclick="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_00.png';startTimer(0)"
+                         unselectable="on"
+                         onmouseover="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_00_hover.png';"
+                         onmouseout="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_00.png';">
                         <img class="img-responsive center-block"
-                             src="assets/timer_seconds_00.png">
+                             src="Data/assets/timer_seconds_00.png">
                     </div><!--
                  -->
                     <div class="col-md-1 vcenter pointy-cursor"
-                         onclick="this.getElementsByTagName('img')[0].src='assets/timer_seconds_15.png';startTimer(15)" unselectable="on"
-                         onmouseover="this.getElementsByTagName('img')[0].src='assets/timer_seconds_15_hover.png';"
-                         onmouseout="this.getElementsByTagName('img')[0].src='assets/timer_seconds_15.png';">
+                         onclick="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_15.png';startTimer(15)"
+                         unselectable="on"
+                         onmouseover="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_15_hover.png';"
+                         onmouseout="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_15.png';">
                         <img class="img-responsive center-block"
-                             src="assets/timer_seconds_15.png">
+                             src="Data/assets/timer_seconds_15.png">
                     </div><!--
                  -->
                     <div class="col-md-2 vcenter">
                         <img class="img-responsive center-block pointy-cursor timer-minute"
                              id="minutes-top"
                              onclick="incrementMinutes()" unselectable="on"
-                             src="assets/timer_0_top.png">
+                             src="Data/assets/timer_0_top.png">
                         <img class="img-responsive center-block pointy-cursor timer-minute"
                              id="minutes-bottom"
                              onclick="decrementMinutes()"
-                             src="assets/timer_0_bottom.png">
+                             src="Data/assets/timer_0_bottom.png">
                     </div><!--
                  -->
                     <div class="col-md-1 vcenter pointy-cursor"
-                         onclick="this.getElementsByTagName('img')[0].src='assets/timer_seconds_30.png';startTimer(30);" unselectable="on"
-                         onmouseover="this.getElementsByTagName('img')[0].src='assets/timer_seconds_30_hover.png';"
-                         onmouseout="this.getElementsByTagName('img')[0].src='assets/timer_seconds_30.png';">
+                         onclick="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_30.png';startTimer(30);"
+                         unselectable="on"
+                         onmouseover="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_30_hover.png';"
+                         onmouseout="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_30.png';">
                         <img class="img-responsive center-block"
-                             src="assets/timer_seconds_30.png">
+                             src="Data/assets/timer_seconds_30.png">
                     </div><!--
                  -->
                     <div class="col-md-1 vcenter pointy-cursor"
-                         onclick="this.getElementsByTagName('img')[0].src='assets/timer_seconds_45.png';startTimer(45);" unselectable="on"
-                         onmouseover="this.getElementsByTagName('img')[0].src='assets/timer_seconds_45_hover.png';"
-                         onmouseout="this.getElementsByTagName('img')[0].src='assets/timer_seconds_45.png';">
+                         onclick="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_45.png';startTimer(45);"
+                         unselectable="on"
+                         onmouseover="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_45_hover.png';"
+                         onmouseout="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_45.png';">
                         <img class="img-responsive center-block"
-                             src="assets/timer_seconds_45.png">
+                             src="Data/assets/timer_seconds_45.png">
                     </div>
                 </div>
             </div>
@@ -123,42 +192,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" id="homeTitle">
-            <div class="col-md-4 flex-container" style="flex-direction: column; justify-content: space-around;"
-                 id="homeTitleCheckboxT1">
-                <div class="row">
-                    <input class="center-block team-text" type="text" placeholder="Equipe 1">
-                </div>
-                <div class="row flex-container"
-                     style="flex-direction: column; justify-content: space-around; align-items: center;">
-                    <div><img class="pointy-cursor" src="assets/emptysadthingy.png" style="margin-top: 6px;"
-                              id="check1T1" onclick="checkUncheck(this.id)"></div>
-                    <div><img class="pointy-cursor" src="assets/emptysadthingy.png" style="margin-top: 6px;"
-                              id="check2T1" onclick="checkUncheck(this.id)"></div>
-                    <div><img class="pointy-cursor" src="assets/emptysadthingy.png" style="margin-top: 6px;"
-                              id="check3T1" onclick="checkUncheck(this.id)"></div>
-                </div>
-            </div>
-            <div class="col-md-4" id="homeTitleEdit">
-                <textarea class="form-control span6 title-text" style="resize: none;" rows="3"
-                          placeholder="Titre de l'improvisation"></textarea>
-            </div>
-            <div class="col-md-4 flex-container" style="flex-direction: column; justify-content: space-around;"
-                 id="homeTitleCheckboxT2">
-                <div class="row">
-                    <input class="center-block team-text" type="text" placeholder="Equipe 2">
-                </div>
-                <div class="row flex-container"
-                     style="flex-direction: column; justify-content: space-around; align-items: center;">
-                    <div><img class="pointy-cursor" src="assets/emptysadthingy.png" style="margin-top: 6px;"
-                              id="check1T2" onclick="checkUncheck(this.id)"></div>
-                    <div><img class="pointy-cursor" src="assets/emptysadthingy.png" style="margin-top: 6px;"
-                              id="check2T2" onclick="checkUncheck(this.id)"></div>
-                    <div><img class="pointy-cursor" src="assets/emptysadthingy.png" style="margin-top: 6px;"
-                              id="check3T2" onclick="checkUncheck(this.id)"></div>
-                </div>
-            </div>
-        </div>
+        <!--SCORES----------------------------------------------------------------------------------------------------->
         <div class="row flex-container" id="homeScoring" style="flex-direction: row; justify-content: space-around;">
             <div class="col-md-4" id="homeScoringCounterT1">
                 <div class="row">
@@ -261,52 +295,52 @@
     </div>
     <div id="Warning" class="container">
         <div class="row">
-            <img src="assets/warning.gif">
+            <img src="Data/assets/warning.gif">
         </div>
     </div>
     <div id="Hymne" class="container">
         <div class="row">
-            <img src="assets/hymne.gif">
+            <img src="Data/assets/hymne.gif">
         </div>
     </div>
     <div id="Caucus" class="container">
         <div class="row">
-            <img src="assets/caucus.gif">
+            <img src="Data/assets/caucus.gif">
         </div>
     </div>
     <div id="Entracte" class="container">
         <div class="row">
-            <img src="assets/entracte.gif">
+            <img src="Data/assets/entracte.gif">
         </div>
     </div>
     <div id="Vote" class="container">
         <div class="row">
-            <img src="assets/vote.gif">
+            <img src="Data/assets/vote.gif">
         </div>
     </div>
     <div id="Penalty" class="container">
         <div class="row">
-            <img src="assets/penalty.gif">
+            <img src="Data/assets/penalty.gif">
         </div>
     </div>
     <div id="Expulsion" class="container">
         <div class="row">
-            <img src="assets/expulsion.gif">
+            <img src="Data/assets/expulsion.gif">
         </div>
     </div>
     <div id="Shootout" class="container">
         <div class="row">
-            <img src="assets/shootout.gif">
+            <img src="Data/assets/shootout.gif">
         </div>
     </div>
     <div id="Stars" class="container">
         <div class="row">
-            <img src="assets/stars.gif">
+            <img src="Data/assets/stars.gif">
         </div>
     </div>
 </div>
 <!-- CUSTOM SCRIPTS -->
 <!-- CONTROLLERS -->
-<script src="js/Controller/MainController.js"></script>
+<script src="Data/js/Controller/MainController.js"></script>
 </body>
 </html>
