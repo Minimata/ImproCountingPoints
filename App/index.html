@@ -66,22 +66,13 @@
                    onmouseleave="mouseovertitle(9)">
                 <div class="navbar-link" hidden id="titletext9">Étoiles</div>
                 <img class="navbar-link" id="titleimg9" src="Data/assets/etoiles.png"></a></li>
-            <!-- dropdown template -->
-            <!--<li class="dropdown">-->
-            <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">File-->
-            <!--<span class="caret"></span></a>-->
-            <!--<ul class="dropdown-menu">-->
-            <!--<li><a href="#">New...</a></li>-->
-            <!--<li><a href="#">Open</a></li>-->
-            <!--<li><a href="#">Save</a></li>-->
-            <!--</ul>-->
-            <!--</li>-->
         </ul>
     </div>
 </nav>
 <!--TITLE------------------------------------------------------------------------------------------------------>
 <div class="col-md-10 col-md-offset-1" style="padding: 10px" id="homeTitleEdit">
-                <textarea class="form-control span6 title-text" style="resize: none; border: none; text-align: center;" rows="2"
+                <textarea class="form-control span6 title-text" style="resize: none; border: none; text-align: center;"
+                          rows="2"
                           placeholder="Titre de l'improvisation"></textarea>
 </div>
 <div class="jumbotron" id="Pages">
@@ -90,7 +81,8 @@
             <div class="col-md-6 flex-container" style="flex-direction: column; justify-content: space-around;"
                  id="homeTitleCheckboxT1">
                 <div class="row">
-                    <input class="center-block team-text" type="text" placeholder="Equipe 1" style="border: none; text-align: center;">
+                    <input class="center-block team-text" type="text" placeholder="Equipe 1"
+                           style="border: none; text-align: center;">
                 </div>
                 <div class="row flex-container"
                      style="flex-direction: column; justify-content: space-around; align-items: center;">
@@ -105,7 +97,8 @@
             <div class="col-md-6 flex-container" style="flex-direction: column; justify-content: space-around;"
                  id="homeTitleCheckboxT2">
                 <div class="row">
-                    <input class="center-block team-text" type="text" placeholder="Equipe 2" style="border: none; text-align: center;">
+                    <input class="center-block team-text" type="text" placeholder="Equipe 2"
+                           style="border: none; text-align: center;">
                 </div>
                 <div class="row flex-container"
                      style="flex-direction: column; justify-content: space-around; align-items: center;">
@@ -196,99 +189,99 @@
         <div class="row flex-container" id="homeScoring" style="flex-direction: row; justify-content: space-around;">
             <div class="col-md-4" id="homeScoringCounterT1">
                 <div class="row">
-                    <h2><span id="scoreT1" class="label col-md-12 score-text"
-                              style="background-color: #0f0f0f;">0</span></h2>
-                    <div class="col-md-4">
-                        <div class="btn-block flex-container"
-                             style="flex-direction: row; justify-content: space-around; align-items: center">
-                            <span class="glyphicon glyphicon-triangle-bottom glyphicon-timer-period pointy-cursor"
-                                  aria-hidden="true" onclick="updateScore(false,1)" unselectable="on"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="btn-block flex-container"
-                             style="flex-direction: row; justify-content: space-around; align-items: center">
-                            <span class="glyphicon glyphicon-stop glyphicon-timer-period pointy-cursor"
-                                  aria-hidden="true" onclick="changeTeamColor('scoreT1')" unselectable="on"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="btn-block flex-container"
-                             style="flex-direction: row; justify-content: space-around; align-items: center">
-                            <span class="glyphicon glyphicon-triangle-top glyphicon-timer-period pointy-cursor"
-                                  aria-hidden="true" onclick="updateScore(true,1)" unselectable="on"></span>
-                        </div>
-                    </div>
+                    <h2>
+                        <span id="scoreT1" class="label col-md-12 score-text" style="background-color: #0f0f0f;">
+                            <span class="col-md-12" id="actualScoreT1">0</span>
+                            <div class="btn"
+                                 style="position: absolute; z-index: 1; left: 40%; top: 40%;">
+                                <span class="glyphicon glyphicon-triangle-bottom pointy-cursor"
+                                      style="height: 30px; width: 30px;"
+                                      aria-hidden="true" onclick="updateScore(false,1)" unselectable="on"></span>
+                            </div>
+                            <div class="btn"
+                                 style="position: absolute; z-index: 1; left: 40%; top: 10%;">
+                                <span class="glyphicon glyphicon-triangle-top pointy-cursor"
+                                      style="height: 30px; width: 30px;"
+                                      aria-hidden="true" onclick="updateScore(true,1)" unselectable="on"></span>
+                            </div>
+                            <div class="btn"
+                                 style="position: absolute; z-index: 1; left: 77%; top: 0%;">
+                                <span class="glyphicon glyphicon-stop pointy-cursor score"
+                                      style="height: 30px; width: 30px;"
+                                      aria-hidden="true" onclick="changeTeamColor('scoreT1')" unselectable="on"></span>
+                            </div>
+                        </span>
+                    </h2>
                 </div>
             </div>
             <div class="col-md-4" id="homeScoringEdit">
                 <div class="row">
-                    <div class="col-md-6 flex-container" style="flex-direction: row;">
+                    <div class="col-md-12 flex-container"
+                         style="flex-direction: row; align-items: center; justify-content: center; ">
                         <h2><span class="label label-primary">Période</span></h2>
                         <h2><span id="period" class="label label-info">1</span></h2>
                     </div>
-                    <div class="col-md-6 flex-container"
-                         style="align-items: center; justify-content: center; flex-direction: column;">
-                        <div onclick="updatePeriod(true)" unselectable="on">
-                            <span class="glyphicon glyphicon-triangle-top glyphicon-timer-period pointy-cursor"
-                                  aria-hidden="true"></span>
-                        </div>
-                        <div onclick="updatePeriod(false)" unselectable="on">
-                            <span class="glyphicon glyphicon-triangle-bottom glyphicon-timer-period pointy-cursor"
-                                  aria-hidden="true"></span>
-                        </div>
+                    <div style="z-index: 1;">
+                        <span class="glyphicon glyphicon-triangle-top pointy-cursor period"
+                              aria-hidden="true"
+                              style="position: absolute; left: 10%;"
+                              onclick="updatePeriod(true)"></span>
+                        <span class="glyphicon glyphicon-triangle-bottom pointy-cursor period"
+                              aria-hidden="true"
+                              style="position: absolute; left: 10%; top: 20%;"
+                              onclick="updatePeriod(false)"></span>
                     </div>
                 </div>
-                <div class="row flex-container" id="homeScoringTimers" style="flex-direction: row;">
-                    <div class="col-md-2 flex-container"
-                         style="align-items: center; justify-content: center; flex-direction: column;">
-                        <div onclick="period_incrementMinutes()" unselectable="on">
-                            <span class="glyphicon glyphicon-triangle-top glyphicon-timer-period pointy-cursor"
-                                  aria-hidden="true"></span>
-                        </div>
-                        <div onclick="period_decrementMinutes()" unselectable="on">
-                            <span class="glyphicon glyphicon-triangle-bottom glyphicon-timer-period pointy-cursor"
-                                  aria-hidden="true"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
+                <div class="row" id="homeScoringTimers">
+                    <div class="col-md-12 flex-container"
+                         style="flex-direction: row; align-items: center; justify-content: center; ">
                         <h1 id="period-timer" class="img-text-period">50:00</h1>
                     </div>
-                    <div class="col-md-3 flex-container" style="justify-content: center;align-items: center;">
-                        <div class="col-md-6" unselectable="on" onclick="timerButtonPlay('period')">
-                            <span class="glyphicon glyphicon-play glyphicon-timer-period"></span>
-                        </div>
-                        <div class="col-md-6" unselectable="on" onclick="timerButtonPause('period')">
-                            <span class="glyphicon glyphicon-pause glyphicon-timer-period"></span>
-                        </div>
+                    <div style="z-index: 1;">
+                        <span class="glyphicon glyphicon-triangle-bottom pointy-cursor period"
+                              aria-hidden="true"
+                              style="position: absolute; left: 5%; top: 70%;"
+                              onclick="period_decrementMinutes()"></span>
+                        <span class="glyphicon glyphicon-triangle-top pointy-cursor period"
+                              aria-hidden="true"
+                              style="position: absolute; left: 5%; top: 50%;"
+                              onclick="period_incrementMinutes()"></span>
+                        <span class="glyphicon glyphicon-play pointy-cursor period"
+                              aria-hidden="true"
+                              style="position: absolute; left: 85%; top: 50%;"
+                              onclick="timerButtonPlay('period')"></span>
+                        <span class="glyphicon glyphicon-pause pointy-cursor period"
+                              aria-hidden="true"
+                              style="position: absolute; left: 85%; top: 70%;"
+                              onclick="timerButtonPause('period')"></span>
                     </div>
                 </div>
             </div>
             <div class="col-md-4" id="homeScoringCounterT2">
                 <div class="row">
-                    <h2><span id="scoreT2" class="label col-md-12 score-text"
-                              style="background-color: #0f0f0f;">0</span></h2>
-                    <div class="col-md-4">
-                        <div class="btn-block flex-container"
-                             style="flex-direction: row; justify-content: space-around; align-items: center">
-                            <span class="glyphicon glyphicon-triangle-bottom glyphicon-timer-period pointy-cursor"
-                                  aria-hidden="true" onclick="updateScore(false,2)"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="btn-block flex-container"
-                             style="flex-direction: row; justify-content: space-around; align-items: center">
-                            <span class="glyphicon glyphicon-stop glyphicon-timer-period pointy-cursor"
-                                  aria-hidden="true" onclick="changeTeamColor('scoreT2')"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="btn-block flex-container"
-                             style="flex-direction: row; justify-content: space-around; align-items: center">
-                            <span class="glyphicon glyphicon-triangle-top glyphicon-timer-period pointy-cursor"
-                                  aria-hidden="true" onclick="updateScore(true,2)"></span>
-                        </div>
-                    </div>
+                    <h2>
+                        <span id="scoreT2" class="label col-md-12 score-text" style="background-color: #0f0f0f;">
+                            <span class="col-md-12" id="actualScoreT2">0</span>
+                            <div class="btn"
+                                 style="position: absolute; z-index: 1; left: 40%; top: 40%;">
+                                <span class="glyphicon glyphicon-triangle-bottom pointy-cursor"
+                                      style="height: 30px; width: 30px;"
+                                      aria-hidden="true" onclick="updateScore(false,2)" unselectable="on"></span>
+                            </div>
+                            <div class="btn"
+                                 style="position: absolute; z-index: 1; left: 40%; top: 10%;">
+                                <span class="glyphicon glyphicon-triangle-top pointy-cursor"
+                                      style="height: 30px; width: 30px;"
+                                      aria-hidden="true" onclick="updateScore(true,2)" unselectable="on"></span>
+                            </div>
+                            <div class="btn"
+                                 style="position: absolute; z-index: 1; left: 0%; top: 0%;">
+                                <span class="glyphicon glyphicon-stop pointy-cursor score"
+                                      style="height: 30px; width: 30px;"
+                                      aria-hidden="true" onclick="changeTeamColor('scoreT2')" unselectable="on"></span>
+                            </div>
+                        </span>
+                    </h2>
                 </div>
             </div>
         </div>

@@ -1,5 +1,7 @@
-var scoreT1Span = document.getElementById('scoreT1');
+var scoreT1Val = document.getElementById('actualScoreT1');
+var scoreT2Val = document.getElementById('actualScoreT2');
 var scoreT2Span = document.getElementById('scoreT2');
+var scoreT1Span = document.getElementById('scoreT1');
 var pages = document.getElementById('Pages');
 var quickTimers = document.getElementById('homeQuickTimers');
 var periodSpan = document.getElementById('period');
@@ -61,23 +63,23 @@ function updateScore(increment, team){
     if(increment){
         if(team == 1){
             scoreT1++;
-            scoreT1Span.innerHTML = scoreT1;
+            scoreT1Val.innerHTML = scoreT1;
         }
         else{
             scoreT2++;
-            scoreT2Span.innerHTML = scoreT2;
+            scoreT2Val.innerHTML = scoreT2;
         }
     }
     else {
         if(team == 1){
             scoreT1--;
             if(scoreT1 <0){scoreT1 = 0}
-            scoreT1Span.innerHTML = scoreT1;
+            scoreT1Val.innerHTML = scoreT1;
         }
         else{
             scoreT2--;
             if(scoreT2 <0){scoreT2 = 0}
-            scoreT2Span.innerHTML = scoreT2;
+            scoreT2Val.innerHTML = scoreT2;
         }
     }
 }
@@ -248,14 +250,14 @@ function period_runTimer()
 
 function period_incrementMinutes()
 {
-    timerButtonStop('period');
+    // timerButtonStop('period');
     if(period_timer >= 50 * 60)
     {
-        period_timer = 0;
+        period_timer = period_timer%60;
     }
     else
     {
-        period_timer = Math.ceil((period_timer + 1) / 300) * 300;
+        period_timer = Math.ceil((period_timer + 1) / 300) * 300 + period_timer%60;
 
     }
     period_updateTimer();
@@ -263,14 +265,16 @@ function period_incrementMinutes()
 
 function period_decrementMinutes()
 {
-    timerButtonStop('period');
+    // timerButtonStop('period');
     if(period_timer < 300)
     {
-        period_timer = 50 * 60;
+        period_timer = 50 * 60 + period_timer%60;
     }
     else
     {
-        period_timer = Math.floor((period_timer - 1) / 300) * 300;
+        console.log("time in seconds:" + period_timer);
+        period_timer = Math.floor((period_timer - 1) / 300) * 300 + period_timer%60;
+        console.log("time in seconds:" + period_timer);
     }
     period_updateTimer();
 }

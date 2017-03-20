@@ -44,15 +44,25 @@
     //font-size: 7em;
     color: #ddd;
 }
+.glyphicon{
+    font-size: 43px;
+    opacity: 0.0;
+    color: #ffffff;
+}
 
-.glyphicon-timer-period
+.glyphicon:hover{
+    font-size: 43px;
+    opacity: 0.7;
+    color: #ffffff;
+}
+
+.glyphicon.period
 {
-    font-size: 3em;
     color: #eee;
     cursor: pointer;
 }
 
-.glyphicon-timer-period:hover
+.glyphicon.period:hover
 {
     color: #ddd;
 }
