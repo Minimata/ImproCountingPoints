@@ -213,7 +213,7 @@ function SpikeTimer(callback, delay) {
 }
 
 // this is hideous, but i'm lazy
-var period_timer = 50 * 60;
+var period_timer = 90 * 60;
 var period_timer_running = false;
 var period_spike = null;
 
@@ -251,7 +251,7 @@ function period_runTimer()
 function period_incrementMinutes()
 {
     // timerButtonStop('period');
-    if(period_timer >= 50 * 60)
+    if(period_timer >= 90 * 60)
     {
         period_timer = period_timer%60;
     }
@@ -268,13 +268,11 @@ function period_decrementMinutes()
     // timerButtonStop('period');
     if(period_timer < 300)
     {
-        period_timer = 50 * 60 + period_timer%60;
+        period_timer = 90 * 60 + period_timer%60;
     }
     else
     {
-        console.log("time in seconds:" + period_timer);
-        period_timer = Math.floor((period_timer - 1) / 300) * 300 + period_timer%60;
-        console.log("time in seconds:" + period_timer);
+        period_timer = period_timer - 300;
     }
     period_updateTimer();
 }
