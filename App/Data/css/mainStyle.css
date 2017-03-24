@@ -110,5 +110,8 @@
 
 .navbar-link{
     height: 35px;
-    width: 50px;
+    width: 60px;
+    background-size: cover;
+    background-position: 50% 50%;
+    border-color: transparent;
 }

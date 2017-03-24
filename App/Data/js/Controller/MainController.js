@@ -334,7 +334,7 @@ function timerButtonStop(timer_id)
             period_spike.pause();
         }
         period_timer_running = false;
-        // period_timer = 50 * 60;
+        period_timer = 90 * 60;
         period_updateTimer();
     }
     else
