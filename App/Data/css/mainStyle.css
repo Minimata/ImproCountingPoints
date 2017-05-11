@@ -65,6 +65,29 @@
     -ms-user-select: none; /* IE10+ */
 }
 
+.two-pix-high{
+    height: 0px;
+    margin: 0px;
+    border-bottom: 1px solid #FF0000;
+    font-size: 1px;
+}
+
+#navbar{
+
+    opacity : 0;
+}
+
+#navbar:hover {
+    opacity : 1;
+}
+#navbar:not(hover) {
+    animation-delay:2s;
+    -webkit-animation-delay:2s;
+    -webkit-transition: opacity 1s ease-out;
+    opacity : 0;
+}
+
+
 .score-text {
     font-weight: bold;
     font-size: 100px;
