@@ -118,6 +118,13 @@
     }
 }
 
+.set-height-43{
+    height: 150px;
+}
+.set-height{
+    height: 190px;
+}
+
 .navbar-link {
     height: 50px;
     width: 60px;

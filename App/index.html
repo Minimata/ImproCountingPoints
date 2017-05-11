@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="Data/css/mainStyle.css"/>
 
 </head>
-<body>
+<body onload="setCSSheight()">
 
 <!-- NAVIGATION BAR -->
 <nav class="navbar navbar-default" id="navbar">
@@ -122,6 +122,7 @@
             </div>
         </div>
         <!--TIMERS----------------------------------------------------------------------------------------------------->
+        <div class="set-height" id="timers">
         <div class="row" id="homeQuickTimers">
             <div class="col-md-2 col-md-offset-5" id="homeQuickTimerStarter">
                 <img class="img-responsive center-block pointy-cursor"
@@ -203,6 +204,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <!--SCORES----------------------------------------------------------------------------------------------------->
         <div class="row flex-container" id="homeScoring" style="flex-direction: row; justify-content: space-around;">

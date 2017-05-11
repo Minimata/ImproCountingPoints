@@ -349,3 +349,10 @@ function timerButtonStop(timer_id)
         showQuickTimerStarter();
     }
 }
+
+function setCSSheight(){
+    if ($(window).height() == 768)
+    {
+        document.getElementById('timers').setAttribute('class', 'set-height-43')
+    }
+}
