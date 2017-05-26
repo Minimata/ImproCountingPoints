@@ -81,8 +81,8 @@
     opacity : 1;
 }
 #navbar:not(hover) {
-    animation-delay:2s;
-    -webkit-animation-delay:2s;
+    animation-delay:235s;
+    -webkit-animation-delay:.235s;
     -webkit-transition: opacity 1s ease-out;
     opacity : 0;
 }
