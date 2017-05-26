@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="Data/css/mainStyle.css"/>
 
 </head>
-<body onload="setCSSheight()">
+<body><!-- onload="setCSSheight()" -->
 
 <!-- NAVIGATION BAR -->
 <nav class="navbar navbar-default" id="navbar">
@@ -80,9 +80,12 @@
 </nav>
 <!--TITLE------------------------------------------------------------------------------------------------------>
 <div class="col-md-10 col-md-offset-1" style="padding: 10px" id="homeTitleEdit">
-                <textarea class="form-control span6 title-text" style="resize: none; border: none; text-align: center;"
+                <!--<textarea id="bigtext" class="form-control span6 title-text" style="resize: none; border: none; text-align: center;"
                           rows="2"
-                          placeholder="Titre de l'improvisation"></textarea>
+                          placeholder="Titre de l'improvisation"></textarea>-->
+    <div id="bigtext">
+        <div id="title" class="title-text" contenteditable="true" spellcheck="false" onchange="resize()">Titre de l'improvisation</div>
+    </div>
 </div>
 <!--PAGES------------------------------------------------------------------------------------------------------>
 <div class="jumbotron" id="Pages">
@@ -360,5 +363,20 @@
 <!-- CUSTOM SCRIPTS -->
 <!-- CONTROLLERS -->
 <script src="Data/js/Controller/MainController.js"></script>
+<script src="Data/lib/bigtext.js"></script>
+<script src="Data/lib/webfont.js"></script>
+<script>
+    WebFont.load({
+        custom: {
+            families: ["Robot-Bold","sans-serif"], // font-family name
+            urls : ['Data/css/mainStyle.css'] // URL to css
+        },
+        loading: function () {
+            $('#bigtext').bigtext({
+                maxfontsize: 40, // default is 528 (in px)
+            });
+        }
+    });
+</script>
 </body>
 </html>

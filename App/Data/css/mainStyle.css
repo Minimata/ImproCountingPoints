@@ -98,9 +98,20 @@
     font-size: 25px;
 }
 
-.title-text {
+.title-text2 {
     font-weight: bold;
-    font-size: 30px;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+
+}
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('fonts/Roboto-Bold.ttf') format("truetype");
+}
+
+.title-text {
+    font-family: 'Roboto-Bold',sans-serif;
+    font-weight: bold;
+    text-align: center;
 }
 
 .flex-container {
