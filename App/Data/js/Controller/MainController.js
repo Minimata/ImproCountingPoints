@@ -355,6 +355,10 @@ window.onresize = function(event) {
     {
         document.getElementById('timers').setAttribute('class', 'set-height-43')
     }
+    else
+    {
+        document.getElementById('timers').setAttribute('class', 'set-height')
+    }
 };
 
 document.getElementById("title").addEventListener("input", function() {

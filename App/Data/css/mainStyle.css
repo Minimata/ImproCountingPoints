@@ -98,11 +98,6 @@
     font-size: 25px;
 }
 
-.title-text2 {
-    font-weight: bold;
-    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-
-}
 @font-face {
     font-family: 'Roboto-Bold';
     src: url('fonts/Roboto-Bold.ttf') format("truetype");
