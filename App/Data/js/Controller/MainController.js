@@ -350,9 +350,14 @@ function timerButtonStop(timer_id)
     }
 }
 
-function setCSSheight(){
+window.onresize = function(event) {
     if ($(window).height() == 768)
     {
         document.getElementById('timers').setAttribute('class', 'set-height-43')
     }
-}
+    else
+    {
+        document.getElementById('timers').setAttribute('class', 'set-height')
+    }
+};
+
