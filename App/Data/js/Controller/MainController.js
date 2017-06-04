@@ -361,6 +361,3 @@ window.onresize = function(event) {
     }
 };
 
-document.getElementById("title").addEventListener("input", function() {
-    $(window).trigger('resize');
-}, false);
