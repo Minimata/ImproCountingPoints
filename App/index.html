@@ -83,11 +83,29 @@
 </nav>
 <!--TITLE------------------------------------------------------------------------------------------------------>
 <div class="col-md-10 col-md-offset-1" style="padding: 10px" id="homeTitleEdit">
-                <textarea class="form-control span6 title-text"
-                          style="resize: none; border: none; text-align: center;"
+                <textarea id="titleTextArea"
+						  class="form-control span6 title-text"
+                          style="resize: none; border: none; text-align: center; height: 70px; margin-top: -20px;"
                           rows="2"
                           placeholder="Titre de l'improvisation"></textarea>
+
 </div>
+
+<div class="col-md-1">
+    <div class="btn"
+         style="position: absolute; z-index: 1; left: 10%; top: 70%; margin-top: 40%;">
+					<span class="glyphicon glyphicon-triangle-bottom pointy-cursor period"
+                          style="height: 30px; width: 30px;"
+                          aria-hidden="true" onclick="increaseFontSize(-5)" unselectable="on"></span>
+    </div>
+    <div class="btn"
+         style="position: absolute; z-index: 1; left: 10%; top: 10%;">
+					<span class="glyphicon glyphicon-triangle-top pointy-cursor period"
+                          style="height: 30px; width: 30px;"
+                          aria-hidden="true" onclick="increaseFontSize(5)" unselectable="on"></span>
+    </div>
+</div>
+
 <!--PAGES------------------------------------------------------------------------------------------------------>
 <div class="jumbotron" id="Pages">
     <div id="Home" class="container">

@@ -361,3 +361,8 @@ window.onresize = function(event) {
     }
 };
 
+function increaseFontSize(val) {
+	var textInput = $('#titleTextArea');
+	var currentSize = parseInt(textInput.css('font-size'));
+    textInput.css("font-size", val + currentSize);
+}
