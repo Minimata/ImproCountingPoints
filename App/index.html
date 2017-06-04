@@ -33,59 +33,60 @@
             <li><a href="#" onclick="hideUnhidePage(1)" onmouseenter="mouseovertitle(1)"
                    onmouseleave="mouseovertitle(1)">
                 <div class="navbar-link" hidden id="titletext1">Avertissement</div>
-                <div class="navbar-link" style="background-image: url('Data/assets/avertissement.png')" id="titleimg1" ></div>
+                <div class="navbar-link" style="background-image: url('Data/assets/avertissement.png')"
+                     id="titleimg1"></div>
             </a></li>
             <li><a href="#" onclick="hideUnhidePage(2)" onmouseenter="mouseovertitle(2)"
                    onmouseleave="mouseovertitle(2)">
                 <div class="navbar-link" hidden id="titletext2">Hymne</div>
-                <div class="navbar-link" style="background-image: url('Data/assets/hymne.png')" id="titleimg2" ></div>
+                <div class="navbar-link" style="background-image: url('Data/assets/hymne.png')" id="titleimg2"></div>
             </a></li>
             <li><a href="#" onclick="hideUnhidePage(3)" onmouseenter="mouseovertitle(3)"
                    onmouseleave="mouseovertitle(3)">
                 <div class="navbar-link" hidden id="titletext3">Caucus</div>
-                <div class="navbar-link" style="background-image: url('Data/assets/caucus.png')" id="titleimg3" ></div>
+                <div class="navbar-link" style="background-image: url('Data/assets/caucus.png')" id="titleimg3"></div>
             </a></li>
             <li><a href="#" onclick="hideUnhidePage(4)" onmouseenter="mouseovertitle(4)"
                    onmouseleave="mouseovertitle(4)">
                 <div class="navbar-link" hidden id="titletext4">Entracte</div>
-                <div class="navbar-link" style="background-image: url('Data/assets/entracte.png')" id="titleimg4" ></div>
+                <div class="navbar-link" style="background-image: url('Data/assets/entracte.png')" id="titleimg4"></div>
             </a></li>
             <li><a href="#" onclick="hideUnhidePage(5)" onmouseenter="mouseovertitle(5)"
                    onmouseleave="mouseovertitle(5)">
                 <div class="navbar-link" hidden id="titletext5">Vote</div>
-                <div class="navbar-link" style="background-image: url('Data/assets/vote.png')" id="titleimg5" ></div>
+                <div class="navbar-link" style="background-image: url('Data/assets/vote.png')" id="titleimg5"></div>
             </a></li>
             <li><a href="#" onclick="hideUnhidePage(6)" onmouseenter="mouseovertitle(6)"
                    onmouseleave="mouseovertitle(6)">
                 <div class="navbar-link" hidden id="titletext6">Pénalité</div>
-                <div class="navbar-link" style="background-image: url('Data/assets/penalite.png')" id="titleimg6" ></div>
+                <div class="navbar-link" style="background-image: url('Data/assets/penalite.png')" id="titleimg6"></div>
             </a></li>
             <li><a href="#" onclick="hideUnhidePage(7)" onmouseenter="mouseovertitle(7)"
                    onmouseleave="mouseovertitle(7)">
                 <div class="navbar-link" hidden id="titletext7">Expulsion</div>
-                <div class="navbar-link" style="background-image: url('Data/assets/expulsion.png')" id="titleimg7" ></div>
+                <div class="navbar-link" style="background-image: url('Data/assets/expulsion.png')"
+                     id="titleimg7"></div>
             </a></li>
             <li><a href="#" onclick="hideUnhidePage(8)" onmouseenter="mouseovertitle(8)"
                    onmouseleave="mouseovertitle(8)">
                 <div class="navbar-link" hidden id="titletext8">Fusillade</div>
-                <div class="navbar-link" style="background-image: url('Data/assets/fusillade.png')" id="titleimg8" ></div>
+                <div class="navbar-link" style="background-image: url('Data/assets/fusillade.png')"
+                     id="titleimg8"></div>
             </a></li>
             <li><a href="#" onclick="hideUnhidePage(9)" onmouseenter="mouseovertitle(9)"
                    onmouseleave="mouseovertitle(9)">
                 <div class="navbar-link" hidden id="titletext9">Étoiles</div>
-                <div class="navbar-link" style="background-image: url('Data/assets/etoiles.png')" id="titleimg9" ></div>
+                <div class="navbar-link" style="background-image: url('Data/assets/etoiles.png')" id="titleimg9"></div>
             </a></li>
         </ul>
     </div>
 </nav>
 <!--TITLE------------------------------------------------------------------------------------------------------>
 <div class="col-md-10 col-md-offset-1" style="padding: 10px" id="homeTitleEdit">
-                <!--<textarea id="bigtext" class="form-control span6 title-text" style="resize: none; border: none; text-align: center;"
+                <textarea class="form-control span6 title-text"
+                          style="resize: none; border: none; text-align: center;"
                           rows="2"
-                          placeholder="Titre de l'improvisation"></textarea>-->
-    <div id="bigtext">
-        <div id="title" class="title-text" contenteditable="true" spellcheck="false" onchange="resize()">Titre de l'improvisation</div>
-    </div>
+                          placeholder="Titre de l'improvisation"></textarea>
 </div>
 <!--PAGES------------------------------------------------------------------------------------------------------>
 <div class="jumbotron" id="Pages">
@@ -126,88 +127,88 @@
         </div>
         <!--TIMERS----------------------------------------------------------------------------------------------------->
         <div class="set-height" id="timers">
-        <div class="row" id="homeQuickTimers">
-            <div class="col-md-2 col-md-offset-5" id="homeQuickTimerStarter">
-                <img class="img-responsive center-block pointy-cursor"
-                     onclick="showQuickTimerSelector()"
-                     src="Data/assets/middlethingy.png">
-            </div>
-            <div class="col-md-12" id="homeQuickTimerSelector">
-                <div class="row">
-                    <div class="col-md-1 col-md-offset-3 vcenter pointy-cursor"
-                         onclick="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_00.png';startTimer(0)"
-                         unselectable="on"
-                         onmouseover="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_00_hover.png';"
-                         onmouseout="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_00.png';">
-                        <img class="img-responsive center-block"
-                             src="Data/assets/timer_seconds_00.png">
-                    </div><!--
+            <div class="row" id="homeQuickTimers">
+                <div class="col-md-2 col-md-offset-5" id="homeQuickTimerStarter">
+                    <img class="img-responsive center-block pointy-cursor"
+                         onclick="showQuickTimerSelector()"
+                         src="Data/assets/middlethingy.png">
+                </div>
+                <div class="col-md-12" id="homeQuickTimerSelector">
+                    <div class="row">
+                        <div class="col-md-1 col-md-offset-3 vcenter pointy-cursor"
+                             onclick="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_00.png';startTimer(0)"
+                             unselectable="on"
+                             onmouseover="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_00_hover.png';"
+                             onmouseout="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_00.png';">
+                            <img class="img-responsive center-block"
+                                 src="Data/assets/timer_seconds_00.png">
+                        </div><!--
                  -->
-                    <div class="col-md-1 vcenter pointy-cursor"
-                         onclick="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_15.png';startTimer(15)"
-                         unselectable="on"
-                         onmouseover="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_15_hover.png';"
-                         onmouseout="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_15.png';">
-                        <img class="img-responsive center-block"
-                             src="Data/assets/timer_seconds_15.png">
-                    </div><!--
+                        <div class="col-md-1 vcenter pointy-cursor"
+                             onclick="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_15.png';startTimer(15)"
+                             unselectable="on"
+                             onmouseover="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_15_hover.png';"
+                             onmouseout="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_15.png';">
+                            <img class="img-responsive center-block"
+                                 src="Data/assets/timer_seconds_15.png">
+                        </div><!--
                  -->
-                    <div class="col-md-2 vcenter">
-                        <img class="img-responsive center-block pointy-cursor timer-minute"
-                             id="minutes-top"
-                             onclick="incrementMinutes()" unselectable="on"
-                             src="Data/assets/timer_0_top.png">
-                        <img class="img-responsive center-block pointy-cursor timer-minute"
-                             id="minutes-bottom"
-                             onclick="decrementMinutes()"
-                             src="Data/assets/timer_0_bottom.png">
-                    </div><!--
+                        <div class="col-md-2 vcenter">
+                            <img class="img-responsive center-block pointy-cursor timer-minute"
+                                 id="minutes-top"
+                                 onclick="incrementMinutes()" unselectable="on"
+                                 src="Data/assets/timer_0_top.png">
+                            <img class="img-responsive center-block pointy-cursor timer-minute"
+                                 id="minutes-bottom"
+                                 onclick="decrementMinutes()"
+                                 src="Data/assets/timer_0_bottom.png">
+                        </div><!--
                  -->
-                    <div class="col-md-1 vcenter pointy-cursor"
-                         onclick="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_30.png';startTimer(30);"
-                         unselectable="on"
-                         onmouseover="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_30_hover.png';"
-                         onmouseout="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_30.png';">
-                        <img class="img-responsive center-block"
-                             src="Data/assets/timer_seconds_30.png">
-                    </div><!--
+                        <div class="col-md-1 vcenter pointy-cursor"
+                             onclick="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_30.png';startTimer(30);"
+                             unselectable="on"
+                             onmouseover="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_30_hover.png';"
+                             onmouseout="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_30.png';">
+                            <img class="img-responsive center-block"
+                                 src="Data/assets/timer_seconds_30.png">
+                        </div><!--
                  -->
-                    <div class="col-md-1 vcenter pointy-cursor"
-                         onclick="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_45.png';startTimer(45);"
-                         unselectable="on"
-                         onmouseover="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_45_hover.png';"
-                         onmouseout="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_45.png';">
-                        <img class="img-responsive center-block"
-                             src="Data/assets/timer_seconds_45.png">
+                        <div class="col-md-1 vcenter pointy-cursor"
+                             onclick="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_45.png';startTimer(45);"
+                             unselectable="on"
+                             onmouseover="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_45_hover.png';"
+                             onmouseout="this.getElementsByTagName('img')[0].src='Data/assets/timer_seconds_45.png';">
+                            <img class="img-responsive center-block"
+                                 src="Data/assets/timer_seconds_45.png">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-12" id="homeQuickTimerButtons">
-                <div class="row">
-                    <div class="col-md-12" style="text-align: center" >
-                        <h1 id="quick-timer" class="fat-text">00:00</h1>
-                    </div>
-                    <div class="btn"  style="position: absolute; z-index: 1; left: 60%; top: 28%;">
+                <div class="col-md-12" id="homeQuickTimerButtons">
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: center">
+                            <h1 id="quick-timer" class="fat-text">00:00</h1>
+                        </div>
+                        <div class="btn" style="position: absolute; z-index: 1; left: 60%; top: 28%;">
                         <span class="glyphicon glyphicon-play pointy-cursor period"
                               style="height: 30px; width: 30px;"
                               aria-hidden="true"
                               onclick="timerButtonPlay('quick')"></span>
-                    </div>
-                    <div class="btn"  style="position: absolute; z-index: 1; left: 64%; top: 28%;">
+                        </div>
+                        <div class="btn" style="position: absolute; z-index: 1; left: 64%; top: 28%;">
                         <span class="glyphicon glyphicon-pause pointy-cursor period"
                               style="height: 30px; width: 30px;"
                               aria-hidden="true"
                               onclick="timerButtonPause('quick')"></span>
-                    </div>
-                    <div class="btn"  style="position: absolute; z-index: 1; left: 68%; top: 28%;">
+                        </div>
+                        <div class="btn" style="position: absolute; z-index: 1; left: 68%; top: 28%;">
                         <span class="glyphicon glyphicon-stop pointy-cursor period"
                               style="height: 30px; width: 30px;"
                               aria-hidden="true"
                               onclick="timerButtonStop('quick')"></span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
         <!--SCORES----------------------------------------------------------------------------------------------------->
         <div class="row flex-container" id="homeScoring" style="flex-direction: row; justify-content: space-around;">
@@ -363,20 +364,5 @@
 <!-- CUSTOM SCRIPTS -->
 <!-- CONTROLLERS -->
 <script src="Data/js/Controller/MainController.js"></script>
-<script src="Data/lib/bigtext.js"></script>
-<script src="Data/lib/webfont.js"></script>
-<script>
-    WebFont.load({
-        custom: {
-            families: ["Robot-Bold","sans-serif"], // font-family name
-            urls : ['Data/css/mainStyle.css'] // URL to css
-        },
-        loading: function () {
-            $('#bigtext').bigtext({
-                maxfontsize: 40, // default is 528 (in px)
-            });
-        }
-    });
-</script>
 </body>
 </html>

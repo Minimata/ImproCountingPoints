@@ -104,9 +104,8 @@
 }
 
 .title-text {
-    font-family: 'Roboto-Bold',sans-serif;
     font-weight: bold;
-    text-align: center;
+    font-size: 30px;
 }
 
 .flex-container {
